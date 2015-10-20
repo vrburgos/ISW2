@@ -1,0 +1,722 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mydbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="caja">
+    <Key>
+      <PropertyRef Name="id_caja" />
+    </Key>
+    <Property Name="id_caja" Type="int" Nullable="false" />
+    <Property Name="nombre_caja" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="SUCURSAL_id_sucursal" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="categoria_producto">
+    <Key>
+      <PropertyRef Name="id_categoria_producto" />
+    </Key>
+    <Property Name="id_categoria_producto" Type="int" Nullable="false" />
+    <Property Name="cat_descripcion" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="compra">
+    <Key>
+      <PropertyRef Name="id_compra" />
+    </Key>
+    <Property Name="id_compra" Type="int" Nullable="false" />
+    <Property Name="PRODUCTO_id_producto" Type="int" Nullable="false" />
+    <Property Name="NOTA_CREDITO_id_nora_credito" Type="int" Nullable="false" />
+    <Property Name="USUARIO_id_usuario" Type="int" Nullable="false" />
+    <Property Name="cantidad_compra" Type="int" Nullable="false" />
+    <Property Name="ORDEN_COMPRA_id_orden_compra" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="compra_proveedor">
+    <Key>
+      <PropertyRef Name="id_comp_prov" />
+    </Key>
+    <Property Name="id_comp_prov" Type="int" Nullable="false" />
+    <Property Name="COMPRA_id_compra" Type="int" Nullable="false" />
+    <Property Name="PROVEEDOR_id_prov" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="departamento">
+    <Key>
+      <PropertyRef Name="id_departamento" />
+    </Key>
+    <Property Name="id_departamento" Type="int" Nullable="false" />
+    <Property Name="dep_nombre" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="deta_compra">
+    <Key>
+      <PropertyRef Name="id_deta_compra" />
+    </Key>
+    <Property Name="id_deta_compra" Type="int" Nullable="false" />
+    <Property Name="COMPRA_id_compra" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="detalle_venta">
+    <Key>
+      <PropertyRef Name="id_detalle_venta" />
+    </Key>
+    <Property Name="id_detalle_venta" Type="int" Nullable="false" />
+    <Property Name="VENTA_id_venta" Type="int" Nullable="false" />
+    <Property Name="PRODUCTO_id_producto" Type="int" Nullable="false" />
+    <Property Name="cantidad_detalle_venta" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="empleado">
+    <Key>
+      <PropertyRef Name="id_empleado" />
+    </Key>
+    <Property Name="id_empleado" Type="int" Nullable="false" />
+    <Property Name="PERSONA_id_persona" Type="int" Nullable="false" />
+    <Property Name="USUARIO_id_usuario" Type="int" Nullable="false" />
+    <Property Name="SUCURSAL_id_sucursal" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="municipio">
+    <Key>
+      <PropertyRef Name="id_municipio" />
+    </Key>
+    <Property Name="id_municipio" Type="int" Nullable="false" />
+    <Property Name="mun_nom" Type="varchar" MaxLength="45" />
+    <Property Name="DEPARTAMENTO_id_departamento" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="nota_credito">
+    <Key>
+      <PropertyRef Name="id_nora_credito" />
+    </Key>
+    <Property Name="id_nora_credito" Type="int" Nullable="false" />
+    <Property Name="FACTURACION_id_facturacion" Type="int" Nullable="false" />
+    <Property Name="TIPO_NOTA_CREDITO_id_tipo_nota_credito" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="orden_compra">
+    <Key>
+      <PropertyRef Name="id_orden_compra" />
+    </Key>
+    <Property Name="id_orden_compra" Type="int" Nullable="false" />
+    <Property Name="fecha_orden_compra" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="persona">
+    <Key>
+      <PropertyRef Name="id_persona" />
+    </Key>
+    <Property Name="id_persona" Type="int" Nullable="false" />
+    <Property Name="per_primer_nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="per_seg_nombre" Type="varchar" MaxLength="45" />
+    <Property Name="per_prim_apellido" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="per_seg_apellido" Type="varchar" MaxLength="45" />
+    <Property Name="per_num_tel" Type="varchar" MaxLength="8" />
+    <Property Name="per_direcc" Type="varchar" MaxLength="60" />
+    <Property Name="MUNICIPIO_id_municipio" Type="int" Nullable="false" />
+    <Property Name="numero_contribuyente" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="presentacion_producto">
+    <Key>
+      <PropertyRef Name="id_presentacion_producto" />
+    </Key>
+    <Property Name="id_presentacion_producto" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="producto">
+    <Key>
+      <PropertyRef Name="id_producto" />
+    </Key>
+    <Property Name="id_producto" Type="int" Nullable="false" />
+    <Property Name="CATEGORIA_PRODUCTO_id_categoria_producto" Type="int" Nullable="false" />
+    <Property Name="INVENTARIO_inventario" Type="int" Nullable="false" />
+    <Property Name="PRESENTACION_PRODUCTO_id_presentacion_producto" Type="int" Nullable="false" />
+    <Property Name="SECCION_BODEGA_id_seccion_bodega" Type="int" Nullable="false" />
+    <Property Name="precio_unit" Type="double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="producto_sucursal">
+    <Key>
+      <PropertyRef Name="PRODUCTO_id_producto" />
+      <PropertyRef Name="SUCURSAL_id_sucursal" />
+    </Key>
+    <Property Name="PRODUCTO_id_producto" Type="int" Nullable="false" />
+    <Property Name="SUCURSAL_id_sucursal" Type="int" Nullable="false" />
+    <Property Name="estado_producto" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="proveedor">
+    <Key>
+      <PropertyRef Name="id_prov" />
+    </Key>
+    <Property Name="id_prov" Type="int" Nullable="false" />
+    <Property Name="prov_nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="prov_direccion" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="prov_tel" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="prov_nit" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="prov_iva" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="TIPO_PROVEEDOR_id_tipo_prov" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rol">
+    <Key>
+      <PropertyRef Name="id_rol" />
+    </Key>
+    <Property Name="id_rol" Type="int" Nullable="false" />
+    <Property Name="rol_desc" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="seccion_bodega">
+    <Key>
+      <PropertyRef Name="id_seccion_bodega" />
+    </Key>
+    <Property Name="id_seccion_bodega" Type="int" Nullable="false" />
+    <Property Name="secc_bod_desc" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sucursal">
+    <Key>
+      <PropertyRef Name="id_sucursal" />
+    </Key>
+    <Property Name="id_sucursal" Type="int" Nullable="false" />
+    <Property Name="suc_nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="suc_direccion" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="suc_descripcion" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="suc_telefono" Type="varchar" MaxLength="8" />
+    <Property Name="MUNICIPIO_id_municipio" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tipo_nota_credito">
+    <Key>
+      <PropertyRef Name="id_tipo_nota_credito" />
+    </Key>
+    <Property Name="id_tipo_nota_credito" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tipo_proveedor">
+    <Key>
+      <PropertyRef Name="id_tipo_prov" />
+    </Key>
+    <Property Name="id_tipo_prov" Type="int" Nullable="false" />
+    <Property Name="tip_prov_desc" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tipo_venta">
+    <Key>
+      <PropertyRef Name="id_tipo_venta" />
+    </Key>
+    <Property Name="id_tipo_venta" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="int" Nullable="false" />
+    <Property Name="usu_nombre" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="usu_contra" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ROL_id_rol" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="venta">
+    <Key>
+      <PropertyRef Name="id_venta" />
+    </Key>
+    <Property Name="id_venta" Type="int" Nullable="false" />
+    <Property Name="TIPO_VENTA_id_tipo_venta" Type="int" Nullable="false" />
+    <Property Name="vent_fech" Type="datetime" Precision="6" Nullable="false" />
+    <Property Name="USUARIO_id_usuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="venta_producto">
+    <Key>
+      <PropertyRef Name="id_vent_prod" />
+    </Key>
+    <Property Name="id_vent_prod" Type="int" Nullable="false" />
+    <Property Name="PRODUCTO_id_producto" Type="int" Nullable="false" />
+    <Property Name="VENTA_id_venta" Type="int" Nullable="false" />
+    <Property Name="USUARIO_id_usuario" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_CAJA_SUCURSAL1">
+    <End Role="sucursal" Type="Self.sucursal" Multiplicity="1" />
+    <End Role="caja" Type="Self.caja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sucursal">
+        <PropertyRef Name="id_sucursal" />
+      </Principal>
+      <Dependent Role="caja">
+        <PropertyRef Name="SUCURSAL_id_sucursal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_COMPRA_NOTA_CREDITO1">
+    <End Role="nota_credito" Type="Self.nota_credito" Multiplicity="1" />
+    <End Role="compra" Type="Self.compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="nota_credito">
+        <PropertyRef Name="id_nora_credito" />
+      </Principal>
+      <Dependent Role="compra">
+        <PropertyRef Name="NOTA_CREDITO_id_nora_credito" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_COMPRA_ORDEN_COMPRA1">
+    <End Role="orden_compra" Type="Self.orden_compra" Multiplicity="1" />
+    <End Role="compra" Type="Self.compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="orden_compra">
+        <PropertyRef Name="id_orden_compra" />
+      </Principal>
+      <Dependent Role="compra">
+        <PropertyRef Name="ORDEN_COMPRA_id_orden_compra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_COMPRA_PRODUCTO1">
+    <End Role="producto" Type="Self.producto" Multiplicity="1" />
+    <End Role="compra" Type="Self.compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="id_producto" />
+      </Principal>
+      <Dependent Role="compra">
+        <PropertyRef Name="PRODUCTO_id_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_COMPRA_PROVEEDOR_COMPRA1">
+    <End Role="compra" Type="Self.compra" Multiplicity="1" />
+    <End Role="compra_proveedor" Type="Self.compra_proveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="compra">
+        <PropertyRef Name="id_compra" />
+      </Principal>
+      <Dependent Role="compra_proveedor">
+        <PropertyRef Name="COMPRA_id_compra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_COMPRA_PROVEEDOR_PROVEEDOR1">
+    <End Role="proveedor" Type="Self.proveedor" Multiplicity="1" />
+    <End Role="compra_proveedor" Type="Self.compra_proveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedor">
+        <PropertyRef Name="id_prov" />
+      </Principal>
+      <Dependent Role="compra_proveedor">
+        <PropertyRef Name="PROVEEDOR_id_prov" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_COMPRA_USUARIO1">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="compra" Type="Self.compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="compra">
+        <PropertyRef Name="USUARIO_id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DETA_COMPRA_COMPRA1">
+    <End Role="compra" Type="Self.compra" Multiplicity="1" />
+    <End Role="deta_compra" Type="Self.deta_compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="compra">
+        <PropertyRef Name="id_compra" />
+      </Principal>
+      <Dependent Role="deta_compra">
+        <PropertyRef Name="COMPRA_id_compra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DETALLE_VENTA_PRODUCTO1">
+    <End Role="producto" Type="Self.producto" Multiplicity="1" />
+    <End Role="detalle_venta" Type="Self.detalle_venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="id_producto" />
+      </Principal>
+      <Dependent Role="detalle_venta">
+        <PropertyRef Name="PRODUCTO_id_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DETALLE_VENTA_VENTA1">
+    <End Role="venta" Type="Self.venta" Multiplicity="1" />
+    <End Role="detalle_venta" Type="Self.detalle_venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="venta">
+        <PropertyRef Name="id_venta" />
+      </Principal>
+      <Dependent Role="detalle_venta">
+        <PropertyRef Name="VENTA_id_venta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_EMPLEADO_PERSONA1">
+    <End Role="persona" Type="Self.persona" Multiplicity="1" />
+    <End Role="empleado" Type="Self.empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="persona">
+        <PropertyRef Name="id_persona" />
+      </Principal>
+      <Dependent Role="empleado">
+        <PropertyRef Name="PERSONA_id_persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_EMPLEADO_SUCURSAL1">
+    <End Role="sucursal" Type="Self.sucursal" Multiplicity="1" />
+    <End Role="empleado" Type="Self.empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sucursal">
+        <PropertyRef Name="id_sucursal" />
+      </Principal>
+      <Dependent Role="empleado">
+        <PropertyRef Name="SUCURSAL_id_sucursal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_EMPLEADO_USUARIO1">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="empleado" Type="Self.empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="empleado">
+        <PropertyRef Name="USUARIO_id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MUNICIPIO_DEPARTAMENTO1">
+    <End Role="departamento" Type="Self.departamento" Multiplicity="1" />
+    <End Role="municipio" Type="Self.municipio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="departamento">
+        <PropertyRef Name="id_departamento" />
+      </Principal>
+      <Dependent Role="municipio">
+        <PropertyRef Name="DEPARTAMENTO_id_departamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_NOTA_CREDITO_TIPO_NOTA_CREDITO1">
+    <End Role="tipo_nota_credito" Type="Self.tipo_nota_credito" Multiplicity="1" />
+    <End Role="nota_credito" Type="Self.nota_credito" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_nota_credito">
+        <PropertyRef Name="id_tipo_nota_credito" />
+      </Principal>
+      <Dependent Role="nota_credito">
+        <PropertyRef Name="TIPO_NOTA_CREDITO_id_tipo_nota_credito" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PERSONA_MUNICIPIO1">
+    <End Role="municipio" Type="Self.municipio" Multiplicity="1" />
+    <End Role="persona" Type="Self.persona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="municipio">
+        <PropertyRef Name="id_municipio" />
+      </Principal>
+      <Dependent Role="persona">
+        <PropertyRef Name="MUNICIPIO_id_municipio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PRODUCTO_CATEGORIA_PRODUCTO1">
+    <End Role="categoria_producto" Type="Self.categoria_producto" Multiplicity="1" />
+    <End Role="producto" Type="Self.producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categoria_producto">
+        <PropertyRef Name="id_categoria_producto" />
+      </Principal>
+      <Dependent Role="producto">
+        <PropertyRef Name="CATEGORIA_PRODUCTO_id_categoria_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PRODUCTO_INVENTARIO1">
+    <End Role="venta" Type="Self.venta" Multiplicity="1" />
+    <End Role="producto" Type="Self.producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="venta">
+        <PropertyRef Name="id_venta" />
+      </Principal>
+      <Dependent Role="producto">
+        <PropertyRef Name="INVENTARIO_inventario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PRODUCTO_PRESENTACION_PRODUCTO1">
+    <End Role="presentacion_producto" Type="Self.presentacion_producto" Multiplicity="1" />
+    <End Role="producto" Type="Self.producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="presentacion_producto">
+        <PropertyRef Name="id_presentacion_producto" />
+      </Principal>
+      <Dependent Role="producto">
+        <PropertyRef Name="PRESENTACION_PRODUCTO_id_presentacion_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PRODUCTO_SECCION_BODEGA1">
+    <End Role="seccion_bodega" Type="Self.seccion_bodega" Multiplicity="1" />
+    <End Role="producto" Type="Self.producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="seccion_bodega">
+        <PropertyRef Name="id_seccion_bodega" />
+      </Principal>
+      <Dependent Role="producto">
+        <PropertyRef Name="SECCION_BODEGA_id_seccion_bodega" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PRODUCTO_SUCURSAL_PRODUCTO1">
+    <End Role="producto" Type="Self.producto" Multiplicity="1" />
+    <End Role="producto_sucursal" Type="Self.producto_sucursal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="id_producto" />
+      </Principal>
+      <Dependent Role="producto_sucursal">
+        <PropertyRef Name="PRODUCTO_id_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PRODUCTO_SUCURSAL_SUCURSAL1">
+    <End Role="sucursal" Type="Self.sucursal" Multiplicity="1" />
+    <End Role="producto_sucursal" Type="Self.producto_sucursal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sucursal">
+        <PropertyRef Name="id_sucursal" />
+      </Principal>
+      <Dependent Role="producto_sucursal">
+        <PropertyRef Name="SUCURSAL_id_sucursal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PROVEEDOR_TIPO_PROVEEDOR1">
+    <End Role="tipo_proveedor" Type="Self.tipo_proveedor" Multiplicity="1" />
+    <End Role="proveedor" Type="Self.proveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_proveedor">
+        <PropertyRef Name="id_tipo_prov" />
+      </Principal>
+      <Dependent Role="proveedor">
+        <PropertyRef Name="TIPO_PROVEEDOR_id_tipo_prov" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SUCURSAL_MUNICIPIO1">
+    <End Role="municipio" Type="Self.municipio" Multiplicity="1" />
+    <End Role="sucursal" Type="Self.sucursal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="municipio">
+        <PropertyRef Name="id_municipio" />
+      </Principal>
+      <Dependent Role="sucursal">
+        <PropertyRef Name="MUNICIPIO_id_municipio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_USUARIO_ROL1">
+    <End Role="rol" Type="Self.rol" Multiplicity="1" />
+    <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rol">
+        <PropertyRef Name="id_rol" />
+      </Principal>
+      <Dependent Role="usuario">
+        <PropertyRef Name="ROL_id_rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VENTA_PRODUCTO_PRODUCTO1">
+    <End Role="producto" Type="Self.producto" Multiplicity="1" />
+    <End Role="venta_producto" Type="Self.venta_producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="id_producto" />
+      </Principal>
+      <Dependent Role="venta_producto">
+        <PropertyRef Name="PRODUCTO_id_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VENTA_PRODUCTO_USUARIO1">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="venta_producto" Type="Self.venta_producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="venta_producto">
+        <PropertyRef Name="USUARIO_id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VENTA_PRODUCTO_VENTA1">
+    <End Role="venta" Type="Self.venta" Multiplicity="1" />
+    <End Role="venta_producto" Type="Self.venta_producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="venta">
+        <PropertyRef Name="id_venta" />
+      </Principal>
+      <Dependent Role="venta_producto">
+        <PropertyRef Name="VENTA_id_venta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VENTA_TIPO_VENTA1">
+    <End Role="tipo_venta" Type="Self.tipo_venta" Multiplicity="1" />
+    <End Role="venta" Type="Self.venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_venta">
+        <PropertyRef Name="id_tipo_venta" />
+      </Principal>
+      <Dependent Role="venta">
+        <PropertyRef Name="TIPO_VENTA_id_tipo_venta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VENTA_USUARIO1">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="venta" Type="Self.venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="venta">
+        <PropertyRef Name="USUARIO_id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="mydbModelStoreContainer">
+    <EntitySet Name="caja" EntityType="Self.caja" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="categoria_producto" EntityType="Self.categoria_producto" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="compra" EntityType="Self.compra" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="compra_proveedor" EntityType="Self.compra_proveedor" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="departamento" EntityType="Self.departamento" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="deta_compra" EntityType="Self.deta_compra" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="detalle_venta" EntityType="Self.detalle_venta" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="empleado" EntityType="Self.empleado" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="municipio" EntityType="Self.municipio" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="nota_credito" EntityType="Self.nota_credito" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="orden_compra" EntityType="Self.orden_compra" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="persona" EntityType="Self.persona" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="presentacion_producto" EntityType="Self.presentacion_producto" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="producto" EntityType="Self.producto" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="producto_sucursal" EntityType="Self.producto_sucursal" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="proveedor" EntityType="Self.proveedor" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="rol" EntityType="Self.rol" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="seccion_bodega" EntityType="Self.seccion_bodega" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="sucursal" EntityType="Self.sucursal" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="tipo_nota_credito" EntityType="Self.tipo_nota_credito" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="tipo_proveedor" EntityType="Self.tipo_proveedor" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="tipo_venta" EntityType="Self.tipo_venta" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="venta" EntityType="Self.venta" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="venta_producto" EntityType="Self.venta_producto" Schema="mydb" store:Type="Tables" />
+    <AssociationSet Name="fk_CAJA_SUCURSAL1" Association="Self.fk_CAJA_SUCURSAL1">
+      <End Role="sucursal" EntitySet="sucursal" />
+      <End Role="caja" EntitySet="caja" />
+    </AssociationSet>
+    <AssociationSet Name="fk_COMPRA_NOTA_CREDITO1" Association="Self.fk_COMPRA_NOTA_CREDITO1">
+      <End Role="nota_credito" EntitySet="nota_credito" />
+      <End Role="compra" EntitySet="compra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_COMPRA_ORDEN_COMPRA1" Association="Self.fk_COMPRA_ORDEN_COMPRA1">
+      <End Role="orden_compra" EntitySet="orden_compra" />
+      <End Role="compra" EntitySet="compra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_COMPRA_PRODUCTO1" Association="Self.fk_COMPRA_PRODUCTO1">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="compra" EntitySet="compra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_COMPRA_PROVEEDOR_COMPRA1" Association="Self.fk_COMPRA_PROVEEDOR_COMPRA1">
+      <End Role="compra" EntitySet="compra" />
+      <End Role="compra_proveedor" EntitySet="compra_proveedor" />
+    </AssociationSet>
+    <AssociationSet Name="fk_COMPRA_PROVEEDOR_PROVEEDOR1" Association="Self.fk_COMPRA_PROVEEDOR_PROVEEDOR1">
+      <End Role="proveedor" EntitySet="proveedor" />
+      <End Role="compra_proveedor" EntitySet="compra_proveedor" />
+    </AssociationSet>
+    <AssociationSet Name="fk_COMPRA_USUARIO1" Association="Self.fk_COMPRA_USUARIO1">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="compra" EntitySet="compra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DETA_COMPRA_COMPRA1" Association="Self.fk_DETA_COMPRA_COMPRA1">
+      <End Role="compra" EntitySet="compra" />
+      <End Role="deta_compra" EntitySet="deta_compra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DETALLE_VENTA_PRODUCTO1" Association="Self.fk_DETALLE_VENTA_PRODUCTO1">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="detalle_venta" EntitySet="detalle_venta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DETALLE_VENTA_VENTA1" Association="Self.fk_DETALLE_VENTA_VENTA1">
+      <End Role="venta" EntitySet="venta" />
+      <End Role="detalle_venta" EntitySet="detalle_venta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_EMPLEADO_PERSONA1" Association="Self.fk_EMPLEADO_PERSONA1">
+      <End Role="persona" EntitySet="persona" />
+      <End Role="empleado" EntitySet="empleado" />
+    </AssociationSet>
+    <AssociationSet Name="fk_EMPLEADO_SUCURSAL1" Association="Self.fk_EMPLEADO_SUCURSAL1">
+      <End Role="sucursal" EntitySet="sucursal" />
+      <End Role="empleado" EntitySet="empleado" />
+    </AssociationSet>
+    <AssociationSet Name="fk_EMPLEADO_USUARIO1" Association="Self.fk_EMPLEADO_USUARIO1">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="empleado" EntitySet="empleado" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MUNICIPIO_DEPARTAMENTO1" Association="Self.fk_MUNICIPIO_DEPARTAMENTO1">
+      <End Role="departamento" EntitySet="departamento" />
+      <End Role="municipio" EntitySet="municipio" />
+    </AssociationSet>
+    <AssociationSet Name="fk_NOTA_CREDITO_TIPO_NOTA_CREDITO1" Association="Self.fk_NOTA_CREDITO_TIPO_NOTA_CREDITO1">
+      <End Role="tipo_nota_credito" EntitySet="tipo_nota_credito" />
+      <End Role="nota_credito" EntitySet="nota_credito" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PERSONA_MUNICIPIO1" Association="Self.fk_PERSONA_MUNICIPIO1">
+      <End Role="municipio" EntitySet="municipio" />
+      <End Role="persona" EntitySet="persona" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PRODUCTO_CATEGORIA_PRODUCTO1" Association="Self.fk_PRODUCTO_CATEGORIA_PRODUCTO1">
+      <End Role="categoria_producto" EntitySet="categoria_producto" />
+      <End Role="producto" EntitySet="producto" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PRODUCTO_INVENTARIO1" Association="Self.fk_PRODUCTO_INVENTARIO1">
+      <End Role="venta" EntitySet="venta" />
+      <End Role="producto" EntitySet="producto" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PRODUCTO_PRESENTACION_PRODUCTO1" Association="Self.fk_PRODUCTO_PRESENTACION_PRODUCTO1">
+      <End Role="presentacion_producto" EntitySet="presentacion_producto" />
+      <End Role="producto" EntitySet="producto" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PRODUCTO_SECCION_BODEGA1" Association="Self.fk_PRODUCTO_SECCION_BODEGA1">
+      <End Role="seccion_bodega" EntitySet="seccion_bodega" />
+      <End Role="producto" EntitySet="producto" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PRODUCTO_SUCURSAL_PRODUCTO1" Association="Self.fk_PRODUCTO_SUCURSAL_PRODUCTO1">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="producto_sucursal" EntitySet="producto_sucursal" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PRODUCTO_SUCURSAL_SUCURSAL1" Association="Self.fk_PRODUCTO_SUCURSAL_SUCURSAL1">
+      <End Role="sucursal" EntitySet="sucursal" />
+      <End Role="producto_sucursal" EntitySet="producto_sucursal" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PROVEEDOR_TIPO_PROVEEDOR1" Association="Self.fk_PROVEEDOR_TIPO_PROVEEDOR1">
+      <End Role="tipo_proveedor" EntitySet="tipo_proveedor" />
+      <End Role="proveedor" EntitySet="proveedor" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SUCURSAL_MUNICIPIO1" Association="Self.fk_SUCURSAL_MUNICIPIO1">
+      <End Role="municipio" EntitySet="municipio" />
+      <End Role="sucursal" EntitySet="sucursal" />
+    </AssociationSet>
+    <AssociationSet Name="fk_USUARIO_ROL1" Association="Self.fk_USUARIO_ROL1">
+      <End Role="rol" EntitySet="rol" />
+      <End Role="usuario" EntitySet="usuario" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VENTA_PRODUCTO_PRODUCTO1" Association="Self.fk_VENTA_PRODUCTO_PRODUCTO1">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="venta_producto" EntitySet="venta_producto" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VENTA_PRODUCTO_USUARIO1" Association="Self.fk_VENTA_PRODUCTO_USUARIO1">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="venta_producto" EntitySet="venta_producto" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VENTA_PRODUCTO_VENTA1" Association="Self.fk_VENTA_PRODUCTO_VENTA1">
+      <End Role="venta" EntitySet="venta" />
+      <End Role="venta_producto" EntitySet="venta_producto" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VENTA_TIPO_VENTA1" Association="Self.fk_VENTA_TIPO_VENTA1">
+      <End Role="tipo_venta" EntitySet="tipo_venta" />
+      <End Role="venta" EntitySet="venta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VENTA_USUARIO1" Association="Self.fk_VENTA_USUARIO1">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="venta" EntitySet="venta" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

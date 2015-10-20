@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mydbModelStoreContainer" CdmEntityContainer="mydbEntities">
+    <EntitySetMapping Name="cajas">
+      <EntityTypeMapping TypeName="mydbModel.caja">
+        <MappingFragment StoreEntitySet="caja">
+          <ScalarProperty Name="id_caja" ColumnName="id_caja" />
+          <ScalarProperty Name="nombre_caja" ColumnName="nombre_caja" />
+          <ScalarProperty Name="SUCURSAL_id_sucursal" ColumnName="SUCURSAL_id_sucursal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categoria_producto">
+      <EntityTypeMapping TypeName="mydbModel.categoria_producto">
+        <MappingFragment StoreEntitySet="categoria_producto">
+          <ScalarProperty Name="id_categoria_producto" ColumnName="id_categoria_producto" />
+          <ScalarProperty Name="cat_descripcion" ColumnName="cat_descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="compras">
+      <EntityTypeMapping TypeName="mydbModel.compra">
+        <MappingFragment StoreEntitySet="compra">
+          <ScalarProperty Name="id_compra" ColumnName="id_compra" />
+          <ScalarProperty Name="PRODUCTO_id_producto" ColumnName="PRODUCTO_id_producto" />
+          <ScalarProperty Name="NOTA_CREDITO_id_nora_credito" ColumnName="NOTA_CREDITO_id_nora_credito" />
+          <ScalarProperty Name="USUARIO_id_usuario" ColumnName="USUARIO_id_usuario" />
+          <ScalarProperty Name="cantidad_compra" ColumnName="cantidad_compra" />
+          <ScalarProperty Name="ORDEN_COMPRA_id_orden_compra" ColumnName="ORDEN_COMPRA_id_orden_compra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="compra_proveedor">
+      <EntityTypeMapping TypeName="mydbModel.compra_proveedor">
+        <MappingFragment StoreEntitySet="compra_proveedor">
+          <ScalarProperty Name="id_comp_prov" ColumnName="id_comp_prov" />
+          <ScalarProperty Name="COMPRA_id_compra" ColumnName="COMPRA_id_compra" />
+          <ScalarProperty Name="PROVEEDOR_id_prov" ColumnName="PROVEEDOR_id_prov" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="departamentoes">
+      <EntityTypeMapping TypeName="mydbModel.departamento">
+        <MappingFragment StoreEntitySet="departamento">
+          <ScalarProperty Name="id_departamento" ColumnName="id_departamento" />
+          <ScalarProperty Name="dep_nombre" ColumnName="dep_nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="deta_compra">
+      <EntityTypeMapping TypeName="mydbModel.deta_compra">
+        <MappingFragment StoreEntitySet="deta_compra">
+          <ScalarProperty Name="id_deta_compra" ColumnName="id_deta_compra" />
+          <ScalarProperty Name="COMPRA_id_compra" ColumnName="COMPRA_id_compra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detalle_venta">
+      <EntityTypeMapping TypeName="mydbModel.detalle_venta">
+        <MappingFragment StoreEntitySet="detalle_venta">
+          <ScalarProperty Name="id_detalle_venta" ColumnName="id_detalle_venta" />
+          <ScalarProperty Name="VENTA_id_venta" ColumnName="VENTA_id_venta" />
+          <ScalarProperty Name="PRODUCTO_id_producto" ColumnName="PRODUCTO_id_producto" />
+          <ScalarProperty Name="cantidad_detalle_venta" ColumnName="cantidad_detalle_venta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empleadoes">
+      <EntityTypeMapping TypeName="mydbModel.empleado">
+        <MappingFragment StoreEntitySet="empleado">
+          <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+          <ScalarProperty Name="PERSONA_id_persona" ColumnName="PERSONA_id_persona" />
+          <ScalarProperty Name="USUARIO_id_usuario" ColumnName="USUARIO_id_usuario" />
+          <ScalarProperty Name="SUCURSAL_id_sucursal" ColumnName="SUCURSAL_id_sucursal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="municipios">
+      <EntityTypeMapping TypeName="mydbModel.municipio">
+        <MappingFragment StoreEntitySet="municipio">
+          <ScalarProperty Name="id_municipio" ColumnName="id_municipio" />
+          <ScalarProperty Name="mun_nom" ColumnName="mun_nom" />
+          <ScalarProperty Name="DEPARTAMENTO_id_departamento" ColumnName="DEPARTAMENTO_id_departamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nota_credito">
+      <EntityTypeMapping TypeName="mydbModel.nota_credito">
+        <MappingFragment StoreEntitySet="nota_credito">
+          <ScalarProperty Name="id_nora_credito" ColumnName="id_nora_credito" />
+          <ScalarProperty Name="FACTURACION_id_facturacion" ColumnName="FACTURACION_id_facturacion" />
+          <ScalarProperty Name="TIPO_NOTA_CREDITO_id_tipo_nota_credito" ColumnName="TIPO_NOTA_CREDITO_id_tipo_nota_credito" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orden_compra">
+      <EntityTypeMapping TypeName="mydbModel.orden_compra">
+        <MappingFragment StoreEntitySet="orden_compra">
+          <ScalarProperty Name="id_orden_compra" ColumnName="id_orden_compra" />
+          <ScalarProperty Name="fecha_orden_compra" ColumnName="fecha_orden_compra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="personas">
+      <EntityTypeMapping TypeName="mydbModel.persona">
+        <MappingFragment StoreEntitySet="persona">
+          <ScalarProperty Name="id_persona" ColumnName="id_persona" />
+          <ScalarProperty Name="per_primer_nombre" ColumnName="per_primer_nombre" />
+          <ScalarProperty Name="per_seg_nombre" ColumnName="per_seg_nombre" />
+          <ScalarProperty Name="per_prim_apellido" ColumnName="per_prim_apellido" />
+          <ScalarProperty Name="per_seg_apellido" ColumnName="per_seg_apellido" />
+          <ScalarProperty Name="per_num_tel" ColumnName="per_num_tel" />
+          <ScalarProperty Name="per_direcc" ColumnName="per_direcc" />
+          <ScalarProperty Name="MUNICIPIO_id_municipio" ColumnName="MUNICIPIO_id_municipio" />
+          <ScalarProperty Name="numero_contribuyente" ColumnName="numero_contribuyente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="presentacion_producto">
+      <EntityTypeMapping TypeName="mydbModel.presentacion_producto">
+        <MappingFragment StoreEntitySet="presentacion_producto">
+          <ScalarProperty Name="id_presentacion_producto" ColumnName="id_presentacion_producto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productoes">
+      <EntityTypeMapping TypeName="mydbModel.producto">
+        <MappingFragment StoreEntitySet="producto">
+          <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+          <ScalarProperty Name="CATEGORIA_PRODUCTO_id_categoria_producto" ColumnName="CATEGORIA_PRODUCTO_id_categoria_producto" />
+          <ScalarProperty Name="INVENTARIO_inventario" ColumnName="INVENTARIO_inventario" />
+          <ScalarProperty Name="PRESENTACION_PRODUCTO_id_presentacion_producto" ColumnName="PRESENTACION_PRODUCTO_id_presentacion_producto" />
+          <ScalarProperty Name="SECCION_BODEGA_id_seccion_bodega" ColumnName="SECCION_BODEGA_id_seccion_bodega" />
+          <ScalarProperty Name="precio_unit" ColumnName="precio_unit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="producto_sucursal">
+      <EntityTypeMapping TypeName="mydbModel.producto_sucursal">
+        <MappingFragment StoreEntitySet="producto_sucursal">
+          <ScalarProperty Name="PRODUCTO_id_producto" ColumnName="PRODUCTO_id_producto" />
+          <ScalarProperty Name="SUCURSAL_id_sucursal" ColumnName="SUCURSAL_id_sucursal" />
+          <ScalarProperty Name="estado_producto" ColumnName="estado_producto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proveedors">
+      <EntityTypeMapping TypeName="mydbModel.proveedor">
+        <MappingFragment StoreEntitySet="proveedor">
+          <ScalarProperty Name="id_prov" ColumnName="id_prov" />
+          <ScalarProperty Name="prov_nombre" ColumnName="prov_nombre" />
+          <ScalarProperty Name="prov_direccion" ColumnName="prov_direccion" />
+          <ScalarProperty Name="prov_tel" ColumnName="prov_tel" />
+          <ScalarProperty Name="prov_nit" ColumnName="prov_nit" />
+          <ScalarProperty Name="prov_iva" ColumnName="prov_iva" />
+          <ScalarProperty Name="TIPO_PROVEEDOR_id_tipo_prov" ColumnName="TIPO_PROVEEDOR_id_tipo_prov" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rols">
+      <EntityTypeMapping TypeName="mydbModel.rol">
+        <MappingFragment StoreEntitySet="rol">
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+          <ScalarProperty Name="rol_desc" ColumnName="rol_desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="seccion_bodega">
+      <EntityTypeMapping TypeName="mydbModel.seccion_bodega">
+        <MappingFragment StoreEntitySet="seccion_bodega">
+          <ScalarProperty Name="id_seccion_bodega" ColumnName="id_seccion_bodega" />
+          <ScalarProperty Name="secc_bod_desc" ColumnName="secc_bod_desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sucursals">
+      <EntityTypeMapping TypeName="mydbModel.sucursal">
+        <MappingFragment StoreEntitySet="sucursal">
+          <ScalarProperty Name="id_sucursal" ColumnName="id_sucursal" />
+          <ScalarProperty Name="suc_nombre" ColumnName="suc_nombre" />
+          <ScalarProperty Name="suc_direccion" ColumnName="suc_direccion" />
+          <ScalarProperty Name="suc_descripcion" ColumnName="suc_descripcion" />
+          <ScalarProperty Name="suc_telefono" ColumnName="suc_telefono" />
+          <ScalarProperty Name="MUNICIPIO_id_municipio" ColumnName="MUNICIPIO_id_municipio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_nota_credito">
+      <EntityTypeMapping TypeName="mydbModel.tipo_nota_credito">
+        <MappingFragment StoreEntitySet="tipo_nota_credito">
+          <ScalarProperty Name="id_tipo_nota_credito" ColumnName="id_tipo_nota_credito" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_proveedor">
+      <EntityTypeMapping TypeName="mydbModel.tipo_proveedor">
+        <MappingFragment StoreEntitySet="tipo_proveedor">
+          <ScalarProperty Name="id_tipo_prov" ColumnName="id_tipo_prov" />
+          <ScalarProperty Name="tip_prov_desc" ColumnName="tip_prov_desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_venta">
+      <EntityTypeMapping TypeName="mydbModel.tipo_venta">
+        <MappingFragment StoreEntitySet="tipo_venta">
+          <ScalarProperty Name="id_tipo_venta" ColumnName="id_tipo_venta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="mydbModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="usu_nombre" ColumnName="usu_nombre" />
+          <ScalarProperty Name="usu_contra" ColumnName="usu_contra" />
+          <ScalarProperty Name="ROL_id_rol" ColumnName="ROL_id_rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ventas">
+      <EntityTypeMapping TypeName="mydbModel.venta">
+        <MappingFragment StoreEntitySet="venta">
+          <ScalarProperty Name="id_venta" ColumnName="id_venta" />
+          <ScalarProperty Name="TIPO_VENTA_id_tipo_venta" ColumnName="TIPO_VENTA_id_tipo_venta" />
+          <ScalarProperty Name="vent_fech" ColumnName="vent_fech" />
+          <ScalarProperty Name="USUARIO_id_usuario" ColumnName="USUARIO_id_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="venta_producto">
+      <EntityTypeMapping TypeName="mydbModel.venta_producto">
+        <MappingFragment StoreEntitySet="venta_producto">
+          <ScalarProperty Name="id_vent_prod" ColumnName="id_vent_prod" />
+          <ScalarProperty Name="PRODUCTO_id_producto" ColumnName="PRODUCTO_id_producto" />
+          <ScalarProperty Name="VENTA_id_venta" ColumnName="VENTA_id_venta" />
+          <ScalarProperty Name="USUARIO_id_usuario" ColumnName="USUARIO_id_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
