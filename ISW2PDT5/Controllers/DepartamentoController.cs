@@ -14,6 +14,7 @@ namespace ISW2PDT5.Controllers
 
         //
         // GET: /Departamento/
+        //vista
 
         public ActionResult Index()
         {//ver dep
