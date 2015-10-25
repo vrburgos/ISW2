@@ -252,6 +252,9 @@
     <Content Include="Content\fontawesome\font-awesome.css" />
     <Content Include="Content\fontawesome\font-awesome.min.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\footable.core.css" />
+    <Content Include="Content\footable.metro.css" />
+    <Content Include="Content\footable.standalone.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -313,7 +316,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ISW2PDT5.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="img\Fondo.jpg" />
     <Content Include="ISW2PDT5.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ISW2PDT5.edmx</DependentUpon>
@@ -342,6 +344,10 @@
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\footable.filter.js" />
+    <Content Include="Scripts\footable.js" />
+    <Content Include="Scripts\footable.paginate.js" />
+    <Content Include="Scripts\footable.sort.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
@@ -385,6 +391,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="img\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

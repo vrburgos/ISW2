@@ -1,39 +1,52 @@
 ﻿@model IEnumerable<ISW2PDT5.departamento>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Departamento";
 }
 
-<h2>Index</h2>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="panel-title">
+            Mantenimientos de Departamento
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="btn btn-default linkBlanco">
+            @Html.ActionLink("Crear Nuevo", "Create")
+        </div>
+        <br />
+        <br />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Departamento
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.id_departamento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dep_nombre)
+                    </td>
+                    <td>
+                        <ul class="nav nav-pills">
+                            <li role="presentation">@Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */id = item.id_departamento })</li>
+                            <li role="presentation">@Html.ActionLink("Detalles", "Details", new { /* id=item.PrimaryKey */id = item.id_departamento })</li>
+                            <li role="presentation">@Html.ActionLink("Eliminar", "Delete", new { /* id=item.PrimaryKey */id = item.id_departamento })</li>
+                        </ul>
+                    </td>
+                </tr>
+            }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.id_departamento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.dep_nombre)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.id_departamento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dep_nombre)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */id=item.id_departamento }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */id = item.id_departamento }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */id = item.id_departamento })
-        </td>
-    </tr>
-}
-
-</table>
+        </table>
+    </div>
+</div>

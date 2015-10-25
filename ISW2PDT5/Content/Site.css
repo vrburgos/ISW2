@@ -3,8 +3,6 @@
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     color: #232323;
     background-color: #fff;
-    background-image:url(../img/Fondo.jpg);
-    background-size:cover;
 }
 
 header, footer, nav, section {
@@ -63,11 +61,3 @@ textarea {
 }
 
 /*balta styles*/
-footer{
-    color:white;
-}
-
-.panel.panel-primary{
-    background-color: rgba(255, 255, 255,0.2);
-    color:black;
-}

@@ -4,26 +4,35 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="panel-title">
+            Detalles del Departamento
+        </div>
+    </div>
+    <div class="panel-body">
+        <fieldset>
+            <div class="form-group">
+                <div class="editor-label">
+                    ID del departamento
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.id_departamento)
+                </div>
+            </div>
 
-<fieldset>
-    <legend>departamento</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.id_departamento)
+            <div class="form-group">
+                <div class="editor-label">
+                    Nombre del Departamento
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.dep_nombre)
+                </div>
+            </div>
+        </fieldset>
+        <ul class="nav nav-pills">
+            <li role="presentation"> @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ })</li>
+            <li role="presentation"> @Html.ActionLink("Back to List", "Index")</li>
+        </ul>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.id_departamento)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.dep_nombre)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.dep_nombre)
-    </div>
-</fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+</div>
