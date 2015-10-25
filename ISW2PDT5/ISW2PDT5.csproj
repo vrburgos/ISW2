@@ -313,7 +313,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ISW2PDT5.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="img\material-design-wallpapers.png" />
+    <Content Include="img\Fondo.jpg" />
     <Content Include="ISW2PDT5.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ISW2PDT5.edmx</DependentUpon>

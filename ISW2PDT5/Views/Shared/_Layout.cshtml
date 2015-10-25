@@ -55,7 +55,7 @@
                         </div>
                         <div id="Mantenimientos" class="panel-collapse collapse">
                             <div class="panel-body">
-                                <ul>
+                                <ul class="nav nav-stacked">
                                     <li>@Html.ActionLink("Departamento", "Index", "Departamento")</li>
                                     <li>@Html.ActionLink("Municipio", "Index", "Municipio")</li>
                                 </ul>
@@ -116,9 +116,6 @@
             </div>
         </div>
     </div>   
-    <!--Esto es lo nuevo que se agrego-->
-    @*<div>@Html.ActionLink("Departamento", "Index", "Departamento")</div>
-    <div>@Html.ActionLink("Municipio", "Index", "Municipio")</div>*@
 
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
