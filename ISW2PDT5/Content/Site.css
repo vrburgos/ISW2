@@ -3,6 +3,8 @@
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     color: #232323;
     background-color: #fff;
+    background-image: url(../img/material-design-wallpapers.png);
+    background-size:cover;
 }
 
 header, footer, nav, section {
@@ -58,4 +60,14 @@ textarea {
 
 .validation-summary-valid {
     display: none;
+}
+
+/*balta styles*/
+footer{
+    color:black;
+}
+
+.panel.panel-primary{
+    background-color: rgba(245, 245, 245, 0.2);
+    color:black;
 }

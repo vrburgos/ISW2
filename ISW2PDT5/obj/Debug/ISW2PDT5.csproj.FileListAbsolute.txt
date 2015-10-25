@@ -93,3 +93,5 @@ C:\Users\Baltazar\Documents\GitHub\ISW2\ISW2PDT5\bin\System.Web.WebPages.Razor.x
 C:\Users\Baltazar\Documents\GitHub\ISW2\ISW2PDT5\obj\Debug\ISW2PDT5.csprojResolveAssemblyReference.cache
 C:\Users\Baltazar\Documents\GitHub\ISW2\ISW2PDT5\obj\Debug\ISW2PDT5.dll
 C:\Users\Baltazar\Documents\GitHub\ISW2\ISW2PDT5\obj\Debug\ISW2PDT5.pdb
+C:\Users\Baltazar\Documents\GitHub\ISW2\ISW2PDT5\bin\MySql.Data.Entity.EF6.dll
+C:\Users\Baltazar\Documents\GitHub\ISW2\ISW2PDT5\bin\MySql.Web.dll
