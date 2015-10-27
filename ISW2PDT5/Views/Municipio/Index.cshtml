@@ -12,7 +12,7 @@
     </div>
     <div class="panel-body">
         <div class="btn btn-default linkBlanco">
-            @Html.ActionLink("Create New", "Create")
+            @Html.ActionLink("Crear Nuevo", "Create")
         </div>
         <br />
         <br />
@@ -20,18 +20,17 @@
             <thead>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.id_municipio)
+                        ID
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.mun_nom)
+                        Municipio
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.departamento.dep_nombre)
+                        Departamento
                     </th>
                     <th></th>
                 </tr>
             </thead>
-
             @foreach (var item in Model)
             {
                 <tr>
@@ -46,9 +45,9 @@
                     </td>
                     <td>
                         <ul class="nav nav-pills">
-                            <li role="presentation">@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ })</li>
-                            <li role="presentation">@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })</li>
-                            <li role="presentation">@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })</li>
+                            <li role="presentation">@Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */id = item.id_municipio })</li>
+                            <li role="presentation">@Html.ActionLink("Detalles", "Details", new { /* id=item.PrimaryKey */id = item.id_municipio })</li>
+                            <li role="presentation">@Html.ActionLink("Eliminar", "Delete", new { /* id=item.PrimaryKey */id = item.id_municipio })</li>
                         </ul>
                     </td>
                 </tr>
