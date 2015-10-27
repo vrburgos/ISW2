@@ -15,9 +15,10 @@
         {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true)
-
-            <fieldset>
-                <div class="form-group">
+    <div class="container">
+        <fieldset>
+            <div class="row">
+                <div class="form-group col-lg-4">
                     <div class="editor-label">
                         ID del departamento
                     </div>
@@ -26,8 +27,10 @@
                         @Html.ValidationMessageFor(model => model.id_departamento)
                     </div>
                 </div>
+            </div>
 
-                <div class="form-group">
+            <div class="row">
+                <div class="form-group col-lg-4">
                     <div class="editor-label">
                         Nombre del Departamento
                     </div>
@@ -36,16 +39,19 @@
                         @Html.ValidationMessageFor(model => model.dep_nombre)
                     </div>
                 </div>
+            </div>
 
-                <div class="form-group">
+            <div class="row">
+                <div class="form-group col-lg-4">
                     <input type="submit" class="btn btn-primary" value="Crear" />
                     <div class="btn btn-default">
                         @Html.ActionLink("Regresar", "Index")
                     </div>
                 </div>
-                
-            </fieldset>
-        }        
+            </div>
+        </fieldset>
+    </div>
+        }
     </div>
 </div>
         @section Scripts {
