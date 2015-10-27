@@ -252,6 +252,7 @@
     <Content Include="Content\fontawesome\font-awesome.css" />
     <Content Include="Content\fontawesome\font-awesome.min.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\footable.svg" />
     <Content Include="Content\footable.core.css" />
     <Content Include="Content\footable.metro.css" />
     <Content Include="Content\footable.standalone.css" />
@@ -339,6 +340,9 @@
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\footable.eot" />
+    <Content Include="Content\fonts\footable.ttf" />
+    <Content Include="Content\fonts\footable.woff" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Schema\isw2.sql" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
@@ -388,6 +392,8 @@
     <Content Include="Views\Municipio\Create.cshtml" />
     <Content Include="Views\Municipio\Edit.cshtml" />
     <Content Include="Views\Municipio\Delete.cshtml" />
+    <Content Include="Views\Shared\_Login.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
