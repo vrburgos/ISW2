@@ -1,0 +1,37 @@
+﻿@model ISW2PDT5.categoria_producto
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="panel-title">
+            Detalles de las Categorias de Productos
+        </div>
+    </div>
+    <div class="panel-body">
+        <fieldset>
+            <div class="form-group">
+                <div class="editor-label">
+                    @Html.DisplayNameFor(model => model.id_categoria_producto)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.id_categoria_producto)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.cat_descripcion)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.cat_descripcion)
+                </div>
+            </div>
+        </fieldset>
+        <ul class="nav nav-pills">
+            <li role="presentation">@Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ })</li>
+            <li role="presentation">@Html.ActionLink("Back to List", "Index")</li>
+        </ul>
+    </div>
+</div>

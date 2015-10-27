@@ -158,6 +158,7 @@
     <Compile Include="compra_proveedor.cs">
       <DependentUpon>ISW2PDT5.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\CategoriaProductoController.cs" />
     <Compile Include="Controllers\DepartamentoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MunicipioController.cs" />
@@ -394,6 +395,11 @@
     <Content Include="Views\Municipio\Delete.cshtml" />
     <Content Include="Views\Shared\_Login.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\CategoriaProducto\Index.cshtml" />
+    <Content Include="Views\CategoriaProducto\Details.cshtml" />
+    <Content Include="Views\CategoriaProducto\Create.cshtml" />
+    <Content Include="Views\CategoriaProducto\Edit.cshtml" />
+    <Content Include="Views\CategoriaProducto\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

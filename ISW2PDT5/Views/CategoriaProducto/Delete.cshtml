@@ -1,0 +1,45 @@
+﻿@model ISW2PDT5.categoria_producto
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="panel-title">
+            Eliminar Categoria de Producto
+        </div>
+    </div>
+    <div class="panel-body">
+        <h3>Esta seguro que desea eliminar esta Categoria de Producto?</h3>
+        <fieldset>
+            <div class="form-group">
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.id_categoria_producto)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.id_categoria_producto)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.cat_descripcion)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.cat_descripcion)
+                </div>
+            </div>
+        </fieldset>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <input type="submit" value="Eliminar" class="btn btn-primary" />
+                <div class="btn btn-default">
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            </div>
+        }
+    </div>
+</div>
