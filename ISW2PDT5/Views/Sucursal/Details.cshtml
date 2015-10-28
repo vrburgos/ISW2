@@ -1,0 +1,57 @@
+﻿@model ISW2PDT5.sucursal
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>sucursal</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.id_sucursal)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.id_sucursal)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.suc_nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.suc_nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.suc_direccion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.suc_direccion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.suc_descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.suc_descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.suc_telefono)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.suc_telefono)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.municipio.mun_nom)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.municipio.mun_nom)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

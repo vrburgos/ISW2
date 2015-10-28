@@ -1,0 +1,101 @@
+﻿@model IEnumerable<ISW2PDT5.sucursal>
+
+@{
+    ViewBag.Title = "Sucursal";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="panel-title">
+            Mantenimientos de Sucursal
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="btn btn-default linkBlanco">
+                    @Html.ActionLink("Create New", "Create")
+                </div>
+            </div>
+            <div class="col-lg-4 col-lg-offset-2">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="fa fa-search fa-2x"></span></span>
+                        <input class="form-control input-lg" id="filter" type="text" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="container table-responsive toggle-circle-filled">
+            <div class="col-lg-11">
+                <table data-filter="#filter" data-filter-text-only="true" class="table" data-page-size="3">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.id_sucursal)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.suc_nombre)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.suc_direccion)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.suc_descripcion)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.suc_telefono)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.municipio.mun_nom)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.id_sucursal)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.suc_nombre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.suc_direccion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.suc_descripcion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.suc_telefono)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.municipio.mun_nom)
+                                </td>
+                                <td>
+                                    <ul class="nav nav-pills">
+                                        <li role="presentation">@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ })</li>
+                                        <li role="presentation">@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })</li>
+                                        <li role="presentation">@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="7">
+                                <div class="pagination pagination-centered hide-if-no-paging"></div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
