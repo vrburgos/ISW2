@@ -162,6 +162,7 @@
     <Compile Include="Controllers\DepartamentoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MunicipioController.cs" />
+    <Compile Include="Controllers\SeccionesBodegaController.cs" />
     <Compile Include="Controllers\SucursalController.cs" />
     <Compile Include="departamento.cs">
       <DependentUpon>ISW2PDT5.tt</DependentUpon>
@@ -406,6 +407,11 @@
     <Content Include="Views\Sucursal\Create.cshtml" />
     <Content Include="Views\Sucursal\Edit.cshtml" />
     <Content Include="Views\Sucursal\Delete.cshtml" />
+    <Content Include="Views\SeccionesBodega\Index.cshtml" />
+    <Content Include="Views\SeccionesBodega\Details.cshtml" />
+    <Content Include="Views\SeccionesBodega\Create.cshtml" />
+    <Content Include="Views\SeccionesBodega\Edit.cshtml" />
+    <Content Include="Views\SeccionesBodega\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

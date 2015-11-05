@@ -1,0 +1,40 @@
+﻿@model ISW2PDT5.seccion_bodega
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="panel-title">
+            Detalles de la Seccion de Bodega
+        </div>
+    </div>
+    <div class="panel-body">
+        <fieldset>
+            <div class="form-group">
+                <div class="editor-label">
+                    ID de la Seccion de Bodega
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.id_seccion_bodega)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="editor-label">
+                    Nombre de la Seccion de Bodega
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.secc_bod_desc)
+                </div>
+            </div>
+
+
+        </fieldset>
+        <ul class="nav nav-pills">
+            <li role="presentation">@Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ })</li>
+            <li role="presentation">@Html.ActionLink("Back to List", "Index")</li>
+        </ul>
+    </div>
+</div>

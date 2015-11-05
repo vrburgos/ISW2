@@ -1,0 +1,53 @@
+﻿@model ISW2PDT5.seccion_bodega
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="panel-title">
+            Editar Seccion de Bodega
+        </div>
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <fieldset>
+                <div class="form-group">
+                    <div class="editor-label">
+                        ID de la seccion de bodega
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.id_seccion_bodega)
+                        @Html.ValidationMessageFor(model => model.id_seccion_bodega)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="editor-label">
+                        Nombre de la Seccion de Bodega
+                    </div>
+                    <div class="editor-field">
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.secc_bod_desc)
+                            @Html.ValidationMessageFor(model => model.secc_bod_desc)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Guardar" class="btn btn-primary" />
+                    <div class="btn btn-default">
+                        @Html.ActionLink("Regresar", "Index")
+                    </div>
+                </div>
+            </fieldset>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
